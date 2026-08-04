@@ -1,8 +1,8 @@
 # Set up Python environment and create a “Student Introduction System” that accepts student details and displays formatted information. 
 #  Python installation, print(), input(), variables, syntax 
+
 print("=== Student Introduction System ===")
-    
-    # Accept student details
+     # Accept student details
 name = input("Enter student name: ")
 age = input("Enter student age: ")
 course = input("Enter enrolled course: ")
