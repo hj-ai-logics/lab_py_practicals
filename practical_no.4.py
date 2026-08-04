@@ -1,4 +1,5 @@
-
+#Create a Traffic Signal Simulation System using conditional logic to display actions based on signal color. 
+# Conditional statements, logical operations 
 
 signal = input("Enter the traffic signal color (Red/Yellow/Green): ")
 
