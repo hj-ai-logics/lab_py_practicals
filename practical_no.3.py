@@ -1,4 +1,5 @@
-# Eligibility Checker System
+# Develop an “Eligibility Checker System” to determine admission eligibility based on marks and age criteria. 
+#  if, if–else, nested if, decision-making 
 
 marks = int(input("Enter your marks: "))
 age = int(input("Enter your age: "))
