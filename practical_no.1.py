@@ -1,4 +1,5 @@
-# Student Introduction System
+# Set up Python environment and create a “Student Introduction System” that accepts student details and displays formatted information. 
+#  Python installation, print(), input(), variables, syntax 
 print("=== Student Introduction System ===")
     
     # Accept student details
