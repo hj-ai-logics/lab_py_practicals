@@ -1,3 +1,6 @@
+# Develop a “Simple Billing Calculator” for a grocery shop to calculate total bill, discount, and final payable amount.
+# Arithmetic operators, relational operators, logical operators, input/output
+
 # --- Item Inputs and Subtotals ---
 wheat_qty = float(input("Enter the quantity of wheat (in kg): "))
 wheat_price_per_kg = 50
