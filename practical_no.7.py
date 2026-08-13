@@ -1,5 +1,5 @@
-# Develop a text analyzer  tool to count words, vowels,spaces,and character in the paragraph 
-#
+# Develop a text analyzer  tool to count words, vowels,spaces,and character in the paragraph .
+# String,indexing,slicing,string traversal.
 
 # Text Analyzer
 
