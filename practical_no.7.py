@@ -5,7 +5,7 @@ print("=" * 45)
 print("         TEXT ANALYZER TOOL")
 print("=" * 45)
 
-paragraph = input("Enter a paragraph:/n" )
+paragraph = input("Enter a paragraph:" )
 
 # ---------------- Basic Info using len() and slicing ----------------
 
