@@ -1,12 +1,7 @@
 # Create a Customer Feedback Formatter that formats feedback messages professionally.
 # String formatting, built-in string methods 
 
-# =========================================
-# CUSTOMER FEEDBACK FORMATTER
-# Teaching: Built-in String Methods & String Formatting
-# =========================================
 
-# Step 1: Input raw customer data
 raw_name = input("Enter customer name: ")
 raw_feedback = input("Enter feedback message: ")
 rating = input("Enter rating (1 to 5): ")
