@@ -3,38 +3,36 @@
 
 # star pattern
 
-rows = int(input("Enter Rows:"))
+print("========================================")
+print("        INVOICE & RECEIPT GENERATOR")
+print("========================================")
 
-for i in range(1, rows + 1):
-    print("*" * i)
+# EXERCISE 1: Receipt Number Pattern
+print("\n--- EXERCISE 1: RECEIPT NUMBER PATTERN ---")
 
-for i in range(rows, 0, -1):
-    print("*" * i)
+rows_pattern = int(input("Enter number of rows for receipt pattern: "))
 
-for i in range(rows):
-    print(" " * (rows - i - 1) + "*" * (2 * i + 1))
+print("\nGenerated Pattern:")
 
-for i in range(rows):
-    print(" " * (rows - i - 1) + "*" * (2 * i + 1))
-for i in range(rows - 2, -1, -1):
-    print(" " * (rows - i - 1) + "*" * (2 * i + 1))
-
-for i in range(1, rows + 1):
+for i in range(1, rows_pattern + 1):
     for j in range(1, i + 1):
-        print(j, end="")
+        print(i, end=" ")
     print()
 
-for i in range(1, rows + 1):
-    for j in range(i):
-        print(i, end="")
-    print()
 
-for i in range(rows, 0, -1):
-    for j in range(1, i + 1):
-        print(j, end="")
-    print()
+# EXERCISE 2: Invoice Frame Border
+print("\n" + "-" * 40)
+print("--- EXERCISE 2: INVOICE FRAME BORDER ---")
 
-for i in range(1, rows + 1):
-    for j in range(i, 0, -1):
-        print(j, end="")
+frame_rows = int(input("Enter frame height (rows): "))
+frame_cols = int(input("Enter frame width (columns): "))
+
+print("\nGenerated Border:")
+
+for i in range(frame_rows):
+    for j in range(frame_cols):
+        if i == 0 or i == frame_rows - 1 or j == 0 or j == frame_cols - 1:
+            print("*", end="")
+        else:
+            print(" ", end="")
     print()
