@@ -1,4 +1,3 @@
-# Program to generate employee identity card
 
 name = input("Enter employee name: ")
 role = input("Enter employee role: ")
