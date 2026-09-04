@@ -1,106 +1,77 @@
 # Develop a Student Marks Management System using lists for storing and updating marks.
 # Lists, insertion, deletion, traversal.
 
-student_names = []
+# Student Marks Management System (Marks Only)
 student_marks = []
 
 while True:
-    print("=" * 40)
-    print("     STUDENT MARKS MANAGEMENT SYSTEM")
-    print("=" * 40)
-    print("1. Insert Student Record")
-    print("2. Delete Student Record")
-    print("3. Update Student Marks")
-    print("4. Traverse / Display All Records")
-    print("5. Search Student")
-    print("6. Show Statistics")
-    print("7. Exit")
-    print("=" * 40)
+    print("========================================")
+    print("    STUDENT MARKS MANAGEMENT SYSTEM     ")
+    print("========================================")
+    print("1. Insert Marks")
+    print("2. Delete Marks")
+    print("3. Update Marks")
+    print("4. Display All Marks")
+    print("5. Search for a Mark")
+    print("6. Exit")
+    print("========================================")
+    
+    choice = input("Enter your choice (1-6): ").strip()
+    print() 
 
-    choice = input("Enter your choice (1-7): ").strip()
-
-    # -------- INSERTION --------
+    # 1. INSERTION
     if choice == "1":
-        name = input("Enter student name: ").strip()
+        marks = float(input("Enter student marks to add: "))
+        student_marks.append(marks)
+        print(f"Success: Marks {marks} added.\n")
 
-        if name in student_names:
-            print(f"Student '{name}' already exists! Use update option instead.\n")
-        else:
-            marks = float(input(f"Enter marks for {name}: "))
-            student_names.append(name)
-            student_marks.append(marks)
-            print(f"Record for '{name}' inserted successfully.\n")
-
-    # -------- DELETION --------
+    # 2. DELETION
     elif choice == "2":
-        name = input("Enter student name to delete: ").strip()
-
-        if name in student_names:
-            index = student_names.index(name)
-            student_names.pop(index)
-            student_marks.pop(index)
-            print(f"Record for '{name}' deleted successfully.\n")
+        marks = float(input("Enter the exact marks value to delete: "))
+        if marks in student_marks:
+            student_marks.remove(marks)
+            print(f"Success: Marks {marks} removed.\n")
         else:
-            print(f"Student '{name}' not found.\n")
+            print(f"Error: Marks value {marks} not found in the list.\n")
 
-    # -------- UPDATION --------
+    # 3. UPDATE
     elif choice == "3":
-        name = input("Enter student name to update: ").strip()
-
-        if name in student_names:
-            index = student_names.index(name)
-            new_marks = float(input(f"Enter new marks for {name}: "))
-            student_marks[index] = new_marks
-            print(f"Marks for '{name}' updated successfully.\n")
-        else:
-            print(f"Student '{name}' not found.\n")
-
-    # -------- TRAVERSAL --------
-    elif choice == "4":
-        if len(student_names) == 0:
-            print("No records to display.\n")
-        else:
-            print("\n{:<5} {:<20} {:<10}".format("No.", "Name", "Marks"))
-            print("-" * 35)
-
-            for i in range(len(student_names)):
-                print("{:<5} {:<20} {:<10}".format(
-                    i + 1, student_names[i], student_marks[i]
-                ))
-            print()
-
-    # -------- SEARCH --------
-    elif choice == "5":
-        name = input("Enter student name to search: ").strip()
-
-        if name in student_names:
-            index = student_names.index(name)
-            print(f"Name: {name}, Marks: {student_marks[index]}\n")
-        else:
-            print(f"Student '{name}' not found.\n")
-
-    # -------- STATISTICS --------
-    elif choice == "6":
         if len(student_marks) == 0:
-            print("No records available for statistics.\n")
+            print("No records available to update.\n")
         else:
-            total = sum(student_marks)
-            average = total / len(student_marks)
-            highest = max(student_marks)
-            lowest = min(student_marks)
+            print("Current positions available:")
+            for i in range(len(student_marks)):
+                print(f"Index {i}: {student_marks[i]}")
+            
+            index = int(input("Enter the index number you want to update: "))
+            if 0 <= index < len(student_marks):
+                new_marks = float(input(f"Enter new marks for index {index}: "))
+                student_marks[index] = new_marks
+                print("Success: Marks updated successfully.\n")
+            else:
+                print("Error: Invalid index position.\n")
 
-            topper_index = student_marks.index(highest)
-            weakest_index = student_marks.index(lowest)
-
-            print("\n----- Class Statistics -----")
-            print(f"Total Students : {len(student_names)}")
-            print(f"Average Marks  : {average:.2f}")
-            print(f"Highest Marks  : {highest} (Student: {student_names[topper_index]})")
-            print(f"Lowest Marks   : {lowest} (Student: {student_names[weakest_index]})")
+    # 4. DISPLAY ALL
+    elif choice == "4":
+        if len(student_marks) == 0:
+            print("No marks recorded yet.\n")
+        else:
+            print("Recorded Marks List:")
+            for i in range(len(student_marks)):
+                print(f"Student {i + 1}: {student_marks[i]}")
             print()
 
-    # -------- EXIT --------
-    elif choice == "7":
+    # 5. SEARCH
+    elif choice == "5":
+        marks = float(input("Enter marks value to search: "))
+        if marks in student_marks:
+            count = student_marks.count(marks)
+            print(f"Found! The mark {marks} exists in the list (appears {count} time(s)).\n")
+        else:
+            print(f"The mark {marks} was not found.\n")
+
+    # 6. EXIT
+    elif choice == "6":
         print("Exiting program. Thank you!")
         break
 
