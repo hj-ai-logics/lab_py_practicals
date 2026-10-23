@@ -1,0 +1,40 @@
+# Event Registration Manager
+
+guests = []
+
+n = int(input("Enter the number of guests: "))
+
+for i in range(n):
+    name = input(f"\nEnter guest {i + 1} name: ")
+
+    print("1. Attending")
+    print("2. Not Attending")
+    print("3. Maybe")
+
+    choice = input("Enter RSVP status: ")
+
+    statuses = {
+        "1": "Attending",
+        "2": "Not Attending",
+        "3": "Maybe"
+    }
+
+    if choice in statuses:
+        status = statuses[choice]
+    else:
+        status = "Maybe"
+
+    guests.append({"name": name, "status": status})
+
+print("\n===== EVENT REGISTRATION SUMMARY =====")
+
+attending = 0
+
+for guest in guests:
+    print(f"{guest['name']} - {guest['status']}")
+
+    if guest["status"] == "Attending":
+        attending += 1
+
+print("\nTotal Invited Guests:", len(guests))
+print("Total Expected Attendance:", attending)
